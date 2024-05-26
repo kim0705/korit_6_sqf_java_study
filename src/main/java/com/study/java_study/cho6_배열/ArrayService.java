@@ -53,13 +53,19 @@ public class ArrayService {
                     break;
                 case "3":
                     System.out.println("[이름 삭제]");
-                    System.out.println("삭제 할 이름: ");
+                    System.out.print("삭제 할 이름: ");
                     String rmName = scanner.nextLine();
+                    String[] delName = new String[names.length - 1];
                     for(int i = 0; i < names.length; i++) {
-                        String[] delName = new String[names.length - i];
-                        if(names[i].equals(rmName)) {
-                            delName[i] = names[i];
-                            System.out.println(delName[i] + "를 삭제합니다.");
+                        if (names[i].equals(rmName)) {
+                            System.out.println(names[i] + "를 삭제합니다.");
+                            names[i] = null; // 삭제할 것을 null
+                            if (names[i] != null) {
+                                delName[i - 1] = names[i]; //
+                                names = delName;
+                                break;
+                            }
+                            break;
                         }
                         System.out.println("해당 이름은 존재하지 않는 이름입니다.");
                         break;
@@ -98,3 +104,4 @@ public class ArrayService {
         }
     }
 }
+
