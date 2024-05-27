@@ -61,7 +61,7 @@ public class ArrayService {
                             System.out.println(names[i] + "를 삭제합니다.");
                             names[i] = null; // 삭제할 것을 null
                             if (names[i] != null) {
-                                delName[i - 1] = names[i]; //
+                                delName[i - 1] = names[i];
                                 names = delName;
                                 break;
                             }
