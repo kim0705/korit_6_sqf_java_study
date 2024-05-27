@@ -29,13 +29,13 @@ public class ArrayService {
             switch (selectedMenu) {
                 case "1":
                     System.out.println("[이름 등록]");
-                    newNames = new String[names.length + 1];
+                    newNames = new String[names.length + 1]; //이름을 등록하게 되면 원래 배열의 크기에서 하나가 늘어남(배열의 사이즈는 변경할 수 없으므로 새로운 배열을 생성) 2. 3(012)
                     for(int i = 0; i < names.length; i++) {
                         newNames[i] = names[i];
                     }
                     names = newNames;
                     System.out.print("등록 할 이름: ");
-                    names[names.length - 1] = scanner.nextLine();
+                    names[names.length - 1] = scanner.nextLine(); // 인덱스 넘버는 0부터 시작이니깐 전체 길이에서 -1
                     System.out.println("등록 완료!");
                     break;
                 case "2":
