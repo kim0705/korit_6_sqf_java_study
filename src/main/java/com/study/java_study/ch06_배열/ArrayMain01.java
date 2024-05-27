@@ -1,4 +1,4 @@
-package com.study.java_study.cho6_배열;
+package com.study.java_study.ch06_배열;
 
 public class ArrayMain01 {
     public static void main(String[] args) {
