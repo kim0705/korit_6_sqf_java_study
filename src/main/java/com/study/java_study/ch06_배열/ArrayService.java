@@ -29,7 +29,7 @@ public class ArrayService {
             switch (selectedMenu) {
                 case "1":
                     System.out.println("[이름 등록]");
-                    newNames = new String[names.length + 1]; //이름을 등록하게 되면 원래 배열의 크기에서 하나가 늘어남(배열의 사이즈는 변경할 수 없으므로 새로운 배열을 생성) 2. 3(012)
+                    newNames = new String[names.length + 1]; //이름을 등록하게 되면 원래 배열의 크기에서 하나가 늘어남(배열의 사이즈는 변경할 수 없으므로 새로운 배열을 생성)
                     for(int i = 0; i < names.length; i++) {
                         newNames[i] = names[i];
                     }
