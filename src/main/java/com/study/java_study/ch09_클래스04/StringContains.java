@@ -1,4 +1,4 @@
-package com.study.java_study.cho09_클래스04;
+package com.study.java_study.ch09_클래스04;
 
 public class StringContains {
     public static void main(String[] args) {

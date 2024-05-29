@@ -1,4 +1,4 @@
-package com.study.java_study.cho09_클래스04;
+package com.study.java_study.ch09_클래스04;
 
 import java.util.Scanner;
 
@@ -50,8 +50,10 @@ public class BookService {
                 search();
                 break;
             case "3":
+                modify();
                 break;
             case "4":
+                remove();
                 break;
             default:
                 System.out.println("입력오류!");
@@ -64,9 +66,9 @@ public class BookService {
     private String validateValue(String title) {
         String value = null;
         while(true) {
-            System.out.println(title + "명 입력: ");
+            System.out.print(title + "명 입력: ");
             value = scanner.nextLine();
-            if (!value.isBlank()) {
+            if (!value.isBlank()) { // 공백이 아니라면
                 break;
             }
             System.out.println(title + "명은 공백일 수 없습니다. 다시 입력하세요.");
@@ -77,8 +79,8 @@ public class BookService {
     private String duplicateBookName() {
         String bookName = null;
         while(true) {
-            bookName = validateValue("도서");
-            if(bookRepository.findBookByBookName(bookName) == null) {
+            bookName = validateValue("도서"); // 공백이 아닌걸 확인한 값을 bookName에 넣어줌
+            if(bookRepository.findBookByBookName(bookName) == null) { // null이면 해당 도서는 등록되지 않았다는 의미
                 break;
             }
             System.out.println("해당 도서명이 이미 존재합니다. 다시 입력하세요.");
@@ -104,7 +106,7 @@ public class BookService {
         System.out.println("2. 도서명 검색");
         System.out.println("3. 저자명 검색");
         System.out.println("4. 출판사명 검색");
-        System.out.println("옵션 선택: ");
+        System.out.print("옵션 선택: ");
         int option = scanner.nextInt();
         scanner.nextLine(); // 버퍼 비우기
         System.out.print("검색어 입력: ");
@@ -120,5 +122,66 @@ public class BookService {
             System.out.println(book.toString());
             System.out.println();
         }
+    }
+
+    private void remove() {
+        System.out.println("[ 도서 삭제 ]");
+        search();
+        System.out.print("삭제 할 도서번호를 입력: ");
+        int removeBookId = scanner.nextInt();
+        scanner.nextLine();
+        BookEntity book = bookRepository.findBookByBookId(removeBookId);
+        if(book == null) {
+            System.out.println("해당 도서번호는 존재하지 않습니다.");
+            return;
+        }
+        bookRepository.deleteBookByBookId(removeBookId);
+    }
+
+    private void modify() {
+        System.out.println("[ 도서 수정 ]");
+        search();
+        System.out.print("수정 할 도서번호 입력: ");
+        int modifyBookId = scanner.nextInt();
+        scanner.nextLine();
+        BookEntity book = bookRepository.findBookByBookId(modifyBookId);
+        if(book == null) {
+            System.out.println("해당 도서번호는 존재하지 않습니다.");
+            return;
+        }
+        System.out.println("<< 도서 수정 정보 입력 >>");
+        for(int i = 0 ; i < 3 ; i++) {
+            String selected = null;
+            switch (i) {
+                case 0:
+                    System.out.print("도서명을 수정하시겠습니까?(y/n)");
+                    selected = scanner.nextLine();
+                    if(selected.equalsIgnoreCase("y")) { // equalsIgnoreCase : 대소문자 구분 없음
+                        String bookName = duplicateBookName(); // 공백, 중복 x
+                        book.setBookname(bookName);
+                        break;
+                    }
+                    break;
+                case 1:
+                    System.out.print("저자명을 수정하시겠습니까?(y/n)");
+                    selected = scanner.nextLine();
+                    if(selected.equalsIgnoreCase("y")) { // equalsIgnoreCase : 대소문자 구분 없음
+                        String author = validateValue("저자"); // 공백 x
+                        book.setAuthor(author);
+                        break;
+                    }
+                    break;
+                case 2:
+                    System.out.print("출판사명을 수정하시겠습니까?(y/n)");
+                    selected = scanner.nextLine();
+                    if(selected.equalsIgnoreCase("y")) { // equalsIgnoreCase : 대소문자 구분 없음
+                        String publisher = validateValue("출판사");
+                        book.setPublisher(publisher);
+                        break;
+                    }
+                    break;
+            }
+        }
+
     }
 }

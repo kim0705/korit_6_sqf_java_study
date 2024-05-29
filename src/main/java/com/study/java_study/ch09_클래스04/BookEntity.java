@@ -1,4 +1,4 @@
-package com.study.java_study.cho09_클래스04;
+package com.study.java_study.ch09_클래스04;
 
 public class BookEntity { // 클래스 안에는 Entity : 대상(정보 집합체)(생성자랑 getter, setter 필수), Service : 기능
     private int bookId;

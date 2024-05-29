@@ -1,4 +1,4 @@
-package com.study.java_study.cho09_클래스04;
+package com.study.java_study.ch09_클래스04;
 
 // 저장소 -> CRUD
 public class BookRepository {
@@ -144,6 +144,32 @@ public class BookRepository {
                 }
         }
         return searchBooks; // 전체 도서에서 해당 도서들만 새로운 배열에 담아서 return
+    }
+
+    private int IndexOfBookId(int bookId) {
+        int findIndex = -1;
+
+        for(int i = 0; i < books.length; i++) {
+            if(books[i].getBookId() == bookId) {
+                findIndex = i;
+                break;
+            }
+        }
+        return findIndex;
+    }
+
+    public void deleteBookByBookId(int bookId) {
+        int findIndex = IndexOfBookId(bookId);
+        BookEntity[] newBooks = new BookEntity[books.length - 1];
+
+        for(int i = 0; i < newBooks.length; i++) {
+            if(i < findIndex) {
+                newBooks[i] = books[i];
+                continue;
+            }
+            newBooks[i] = books[i + 1];
+        }
+        books = newBooks;
     }
 }
 
