@@ -12,7 +12,7 @@ public class StudentMain {
         StudentService studentService2 = StudentService.getInstance();
 
         studentService.addStudent();
-        StudentRepository.getInstance().add("김준이");
+        StudentRepository.getInstance().add("김준이"); // StudentRepository.getInstance()가 주소
         studentService2.addStudent();
 
         studentService.getStudentData();

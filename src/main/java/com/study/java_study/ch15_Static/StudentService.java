@@ -10,7 +10,7 @@ public class StudentService {
         if(instance == null) {
             instance = new StudentService();
         }
-        return instance;
+        return instance; // 객체 리턴
     }
 
     public void addStudent() {
