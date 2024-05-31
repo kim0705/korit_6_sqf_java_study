@@ -7,7 +7,7 @@ public class BookMain {
 
         System.out.println("프로그램을 실행합니다.");
 
-        while(bookService.run()) {}
+        while(bookService.run()) {} // 후처리를 할 수 있으므로 while()사용
 
         System.out.println("프로그램을 종료합니다.");
 
