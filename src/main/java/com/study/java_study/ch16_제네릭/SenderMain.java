@@ -19,6 +19,7 @@ public class SenderMain {
 
         Sender<Integer, String, Double> sender1 = new Sender<>(10, "20", 3.14); // 생성될 때 자료의 타입이 정해짐
         Sender sender2 = new Sender<String, String, String>("test1","test2","test3");
+
     }
 
 }
