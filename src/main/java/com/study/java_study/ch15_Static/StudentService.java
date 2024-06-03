@@ -8,7 +8,7 @@ public class StudentService {
 
     public static StudentService getInstance() {
         if(instance == null) {
-            instance = new StudentService();
+            instance = new StudentService(); // 자기 자신의 객체를 생성해서 자신에게 넣어둠
         }
         return instance; // 객체 리턴
     }
