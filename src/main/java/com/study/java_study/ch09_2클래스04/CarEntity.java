@@ -2,23 +2,23 @@ package com.study.java_study.ch09_2클래스04;
 
 public class CarEntity {
 
-    private int carNum;
+    private String carNum;
     private String carName;
-    private int carYear;
+    private int carId;
     private String carOwner;
 
-    public CarEntity(int carNum, String carName, String carOwner, int carYear) {
+    public CarEntity(String carNum, String carName, String carOwner, int carId) {
         this.carNum = carNum;
         this.carName = carName;
         this.carOwner = carOwner;
-        this.carYear = carYear;
+        this.carId = carId;
     }
 
-    public int getCarNum() {
+    public String getCarNum() {
         return carNum;
     }
 
-    public void setCarNum(int carNum) {
+    public void setCarNum(String carNum) {
         this.carNum = carNum;
     }
 
@@ -30,12 +30,12 @@ public class CarEntity {
         this.carName = carName;
     }
 
-    public int getCarYear() {
-        return carYear;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setCarYear(int carYear) {
-        this.carYear = carYear;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public String getCarOwner() {
@@ -51,7 +51,7 @@ public class CarEntity {
         return "CarEntity{" +
                 "carNum=" + carNum +
                 ", carName='" + carName + '\'' +
-                ", carYear=" + carYear +
+                ", carId=" + carId +
                 ", carOwner='" + carOwner + '\'' +
                 '}';
     }

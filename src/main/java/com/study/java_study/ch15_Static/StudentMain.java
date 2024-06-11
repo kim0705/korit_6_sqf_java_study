@@ -7,7 +7,7 @@ package com.study.java_study.ch15_Static;
  */
 public class StudentMain {
     public static void main(String[] args) {
-        // StudentService studentService = new StudentService(); 생성자가 pivate
+        // StudentService studentService = new StudentService(); 생성자가 private
         StudentService studentService = StudentService.getInstance();
         StudentService studentService2 = StudentService.getInstance();
 
@@ -16,8 +16,5 @@ public class StudentMain {
         studentService2.addStudent();
 
         studentService.getStudentData();
-
-
-
     }
 }

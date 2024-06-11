@@ -42,7 +42,7 @@ public class BookService {
 
     public void run2() {
         System.out.println("도서 전체 정보 요청을 받았습니다.");
-        List<BookEntity> bookEntities = run3(); // List타입 bookEntities에 run3()메소드의 리턴값(List타입임) 대입
+        List<BookEntity> bookEntities = run3(); // List구조 bookEntities에 run3()메소드의 리턴값(List타입임) 대입
         BookRequestDto bookRequestDto = new BookRequestDto(200, "조회 완료", bookEntities); // 생성자를 통한 매개변수를 bookRequestDto에 담아줌
         run4(bookRequestDto); // 담아준 매개변수를 run4의 매개변수로 이용
     }

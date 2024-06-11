@@ -7,5 +7,4 @@ public class InterfaceA2 implements InterfaceA{
         System.out.println("InterfaceA2에서 테스트 실행");
     }
 
-
 }

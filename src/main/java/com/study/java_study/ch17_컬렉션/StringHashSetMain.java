@@ -5,7 +5,7 @@ import java.util.*;
 public class StringHashSetMain {
     public static void main(String[] args) {
 
-        HashSet<String> strSet = new HashSet<>(); // Set: 중복 안되고 순서 없음
+        HashSet<String> strSet = new HashSet<>(); // HashSet: 중복 안되고 순서 없음
 
         //  추가
         strSet.add("김준일");

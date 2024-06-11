@@ -18,7 +18,7 @@ public class StringArrayMain {
         String[] strArray2 = strList.toArray(new String[strList.size()]); // 리스트에서 배열로 변환
 
         // 리스트 값 조회
-        System.out.println(strList);
+        System.out.println(strList); // strList가 변환 후에도 계속 있음을 확인할 수 있다
 
         // contains 포함 여부
         System.out.println(strList.contains("test1"));
@@ -43,7 +43,7 @@ public class StringArrayMain {
         List<Integer> num2 = List.of(1,3,5);
         ArrayList<Integer> nums3 = new ArrayList<>();
         nums3.addAll(nums);
-        System.out.println(nums3.removeAll(num2));
+        System.out.println(nums3.removeAll(num2)); // num2에 있는 데이터가 num3에 있다면 true
         System.out.println(nums3);
 
         // 중간에 값 추가도 가능

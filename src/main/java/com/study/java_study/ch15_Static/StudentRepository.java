@@ -7,11 +7,11 @@ public class StudentRepository {
 
     private StudentRepository() {
         names = new String[5];
-    }
+    } // 생성되면 names배열 생성
 
     public static StudentRepository getInstance() {
         if(instance == null) {
-            instance = new StudentRepository();
+            instance = new StudentRepository(); // istance에 StudentRepository객체 생성
         }
         return instance;
     }
@@ -25,7 +25,7 @@ public class StudentRepository {
         }
     }
 
-    public String[] getNames() {
+    public String[] getNames() { // names배열 리턴 메소드
         return names;
     }
 }

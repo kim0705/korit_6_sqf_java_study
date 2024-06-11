@@ -7,7 +7,7 @@ import java.util.Set;
 public class StringHashMapMain {
 
     public static void main(String[] args) {
-        HashMap<Integer, String> strMap = new HashMap<>(); // Map: key값만 중복이 안됨, 순서 없음
+        HashMap<Integer, String> strMap = new HashMap<>(); // HashMap: key값만 중복이 안됨, 순서 없음
 
         strMap.put(10, "김준일");
         strMap.put(11, "김준이");
@@ -29,7 +29,7 @@ public class StringHashMapMain {
 
         System.out.println(lang.get("java")); // key값으로 값 가져오기
 
-        Set<Map.Entry<String, String>> entries = lang.entrySet(); // key-value값을 묶어서 entity로 만들어서 Set으로 만들어줌
+        Set<Map.Entry<String, String>> entries = lang.entrySet(); // key-value값을 묶어서 entry로 만들어서 Set으로 만들어줌
                                                                   // Map(lang)에 entrySet() 함수를 사용하여 Map의 전체 key-value값을 Set에 저장해 반환
 
         for(Map.Entry<String, String> entry : entries) { // Set은 반복이 가능하니깐 Map(반복을 지원하지 않음)에서 Set으로 변환해서 for-each로 반복

@@ -32,7 +32,6 @@ public class Student { // 변수 -> 생성자 -> getter, setter
         return Objects.hash(name, age);
     }
 
-
     @Override
     public String toString() {
         return "Student{" +

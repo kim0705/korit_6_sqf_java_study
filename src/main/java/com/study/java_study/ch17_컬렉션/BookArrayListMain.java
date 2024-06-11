@@ -9,7 +9,7 @@ public class BookArrayListMain {
 
         Scanner scan = new Scanner(System.in);
 
-        List<Book> bookList = new ArrayList<>(); // List: 순서 있고 중복 o(배열 같은 느낌)
+        List<Book> bookList = new ArrayList<>(); // ArrayList: 순서 있고 중복 o(배열 같은 느낌)
 
         for(int i = 0; i < 3; i++) {
             String bookName;
@@ -19,7 +19,7 @@ public class BookArrayListMain {
             System.out.println("저자명: ");
             author = scan.nextLine();
 
-            bookList.add(new Book(bookName, author));
+            bookList.add(new Book(bookName, author)); // 입력받은 데이터로 새로운 Book객체를 만들어서 bookList에 추가
         }
 
         for(Book book : bookList) {

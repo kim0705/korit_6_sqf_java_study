@@ -16,7 +16,5 @@ public class AdditionMain {
         Addition addition2 = (x, y) -> x + y;
         result = addition2.add(10, 20);
         System.out.println("결과2: " + result);
-
-
     }
 }
